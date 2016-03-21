@@ -1,0 +1,1 @@
+!function(o,e){"use strict";var t=t||!1;"function"==typeof t&&t.amd?t("background-video",[],e):"object"==typeof module&&module&&"object"==typeof module.exports?module.exports=e:e(o)}(this,function(o){var e=function(){};return console.log(o),e.prototype.process=process,e.prototype.update=update,new e,window.css={"background-video":e},e});

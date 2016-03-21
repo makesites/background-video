@@ -1,9 +1,9 @@
 /**
- * @name {{name}}
- * @author {{author}}
- * Homepage: {{homepage}}
- * Version: {{version}} ({{build_date}})
- * @license {{#license licenses}}{{/license}}
+ * @name css-background-video
+ * @author makesites
+ * Homepage: http://github.com/makesites/css-background-video
+ * Version: 0.0.0 (Mon, 21 Mar 2016 02:20:01 GMT)
+ * @license Apache License, Version 2.0
  */
 
 
@@ -36,7 +36,8 @@ var Shim = function(){
 console.log( w );
 // Methods
 
-{{{lib}}}
+
+
 
 	//
 	Shim.prototype.process = process;
