@@ -1,6 +1,6 @@
 {
 	"name" : "css-background-video",
-	"version" : "0.0.1",
+	"version" : "0.1.0",
 	"author": "makesites",
 	"description": "An HTML5 shim to support background videos as a CSS attribute",
 	"homepage": "http://github.com/makesites/css-background-video",

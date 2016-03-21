@@ -2,7 +2,7 @@
  * @name css-background-video
  * @author makesites
  * Homepage: http://github.com/makesites/css-background-video
- * Version: 0.0.1 (Mon, 21 Mar 2016 06:46:08 GMT)
+ * Version: 0.1.0 (Mon, 21 Mar 2016 06:55:23 GMT)
  * @license Apache License, Version 2.0
  */
 
