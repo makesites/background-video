@@ -41,6 +41,7 @@ var name = package.name;
 var src = [
 	// main lib
 	'lib/parse.js',
+	'lib/render.js',
 	'lib/update.js',
 	'lib/utils.js'
 ];
