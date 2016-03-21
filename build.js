@@ -40,6 +40,7 @@ var name = package.name;
 // - concatinate all files
 var src = [
 	// main lib
+	'lib/options.js',
 	'lib/parse.js',
 	'lib/render.js',
 	'lib/update.js',
