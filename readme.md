@@ -11,6 +11,12 @@ An HTML5 shim to support background videos as a CSS attribute.
 * **Standards-compliant**: following existing conventions of CSS/HTML5
 * **Multi-format**: add multiple video URLs for cross-broser support
 
+## Examples
+
+* [Basic demo](http://rawgit.com/makesites/css-background-video/master/examples/basic.html)
+* [Autorun on page load](http://rawgit.com/makesites/css-background-video/master/examples/autorun.html)
+
+
 ## Install
 
 Using npm:
