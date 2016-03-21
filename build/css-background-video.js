@@ -2,7 +2,7 @@
  * @name css-background-video
  * @author makesites
  * Homepage: http://github.com/makesites/css-background-video
- * Version: 0.2.0 (Mon, 21 Mar 2016 07:45:18 GMT)
+ * Version: 0.2.0 (Mon, 21 Mar 2016 23:53:21 GMT)
  * @license Apache License, Version 2.0
  */
 
@@ -39,7 +39,7 @@ var Shim = function( options ){
 	// extend options
 	this.options = utils.extend({}, defaults, options);
 	//
-	utils.injectStyles('.video-background { position: '+ this.options.position +'; /* bottom: 50%; right: 50%; -webkit-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%); */ min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1000; overflow: hidden; }');
+	this.styles();
 
 	// find all the elements
 	if( this.options.autoparse ) this.parse();
@@ -51,8 +51,9 @@ var Shim = function( options ){
 // default options (extend when you initialize)
 var defaults = {
 	autoparse: true,
-	position: "absolute", // options: absolute, fixed
+	position: "absolute", // options: absolute, fixed, relative
 	attribute: "background",
+	className: "css-background-video",
 	dataClass: false
 };
 
@@ -84,7 +85,7 @@ var parse = function(){
 };
 
 var render = function(els, videos){
-	var video = '<video autoplay muted loop class="video-background">';
+	var video = '<video autoplay muted loop class="'+ this.options.className +'">';
 	for( var n in videos ){
 		var url = videos[n];
 		var type = utils.getType( url );
@@ -106,6 +107,25 @@ var render = function(els, videos){
 	}
 };
 
+var styles = function(){
+	var css = "";
+	// lookup conflicting stylesheet
+	var stylesheet = document.getElementById('css-background-video');
+	if( stylesheet ){
+		// get styles
+		css = stylesheet.innerHTML;
+        // exit now if it already contains the .video-background class
+        if( css.search(this.options.className) > -1 ) return;
+		// remove existing stylesheet
+		stylesheet.parentNode.removeChild(stylesheet);
+	}
+	// inject stylesheet
+	css += '.'+ this.options.className +' { position: '+ this.options.position +'; /* bottom: 50%; right: 50%; -webkit-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%); */ min-width: 100%; min-height: 100%; width: auto; height: auto; left: 0; top: 0; z-index: -1000; overflow: hidden; }';
+
+	utils.injectStyles( css );
+
+};
+
 
 var utils = {
 	getType: function(url){
@@ -116,7 +136,8 @@ var utils = {
 	injectStyles: function ( css ) {
 		var head = document.head || document.getElementsByTagName('head')[0],
 		style = document.createElement('style');
-		style.type = 'text/css';
+		style.id = "css-background-video";
+		style.type = "text/css";
 		if (style.styleSheet){
 			style.styleSheet.cssText = css;
 		} else {
@@ -150,6 +171,7 @@ var utils = {
 	//
 	Shim.prototype.parse = parse;
 	Shim.prototype.render = render;
+	Shim.prototype.styles = styles;
 	//Shim.prototype.update = update;
 
 	// auto-run if defined
