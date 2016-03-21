@@ -1,0 +1,7 @@
+{
+	"name": "css-background-video",
+	"version": "0.0.0",
+	"main": ["./build/css-background-video.js"],
+	"dependencies": {
+	}
+}
