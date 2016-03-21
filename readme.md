@@ -16,6 +16,7 @@ An HTML5 shim to support background videos as a CSS attribute.
 
 * [Basic demo](http://rawgit.com/makesites/css-background-video/master/examples/basic.html)
 * [Auto-parse on page load](http://rawgit.com/makesites/css-background-video/master/examples/autoparse.html)
+* [Fixed video background](http://rawgit.com/makesites/css-background-video/master/examples/fixed.html)
 
 
 ## Install
