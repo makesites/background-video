@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSSS: background-video - autorun</title>
+
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	html, body, .main {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.main {
+		background: url(https://archive.org/download/EarthIlluminated-web/Earth_Illuminated-640.mp4), url(https://archive.org/download/EarthIlluminated-web/Earth_Illuminated-640.webm);
+	}
+	</style>
+	<script type="text/javascript">
+	var css = {
+		'background-video': true
+	};
+	</script>
+	<script type="text/javascript" src="../build/css-background-video.js"></script>
+
+</head>
+<body>
+	<div class="main"><!-- --></div>
+</body>
+</html>
