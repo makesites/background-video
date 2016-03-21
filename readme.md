@@ -9,7 +9,7 @@ An HTML5 shim to support background videos as a CSS attribute.
 * **Automated**: works with no additional logic on the client
 * **Independent**: no other dependencies required
 * **Standards-compliant**: following existing conventions of CSS/HTML5
-
+* **Multi-format**: add multiple video URLs for cross-broser support
 
 ## Install
 
@@ -28,8 +28,8 @@ $ bower install css-background-video
 
 Initialize the classes that's saved in the global namespace manually, usually after all the have markup has been rendered.
 ```
-var Class = css['background-video'];
-new Class();
+var Shim = css['background-video'];
+new Shim();
 ```
 You can also let the plugin automatically execute ```onload``` by creating adding the following global var:
 ```
