@@ -43,6 +43,7 @@ var src = [
 	'lib/options.js',
 	'lib/parse.js',
 	'lib/render.js',
+	'lib/styles.js',
 	'lib/update.js',
 	'lib/utils.js'
 ];
