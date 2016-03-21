@@ -53,6 +53,16 @@ css['background-video'] = true;
 ```
 Instead of a boolean you can define an object, which will be used as the initialization options.
 
+## Options
+
+* **attribute** (string, default: "background"): the attribute to lookup for the video URLs. Usually doesn't need to change, although come handy if there is significant latency parsing the styles.
+
+* **autoparse** (boolean, default: true): if the script will try to parse the existing styles automatically, to lookup for video URLs
+
+* **className** (string, default: "css-background-video"): the class name used in the injected stylesheet to target the video element styling. If the default name is conflicting with other elements in your UI, you can change it with this option.
+
+* **position** (string, default: "absolute"): How the video element is positioned related to its container, following regular CSS conventions. Acceptable options: absolute, fixed, relative.
+
 
 ## Credits
 
