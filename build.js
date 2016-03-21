@@ -40,7 +40,7 @@ var name = package.name;
 // - concatinate all files
 var src = [
 	// main lib
-	'lib/process.js',
+	'lib/parse.js',
 	'lib/update.js',
 	'lib/utils.js'
 ];
