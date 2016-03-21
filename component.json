@@ -1,6 +1,6 @@
 {
 	"name": "css-background-video",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "An HTML5 shim to support background videos as a CSS attribute",
 	"main": ["./build/css-background-video.js"],
 	"dependencies": {

@@ -2,7 +2,7 @@
  * @name css-background-video
  * @author makesites
  * Homepage: http://github.com/makesites/css-background-video
- * Version: 0.1.0 (Mon, 21 Mar 2016 06:55:23 GMT)
+ * Version: 0.2.0 (Mon, 21 Mar 2016 07:45:18 GMT)
  * @license Apache License, Version 2.0
  */
 
@@ -30,16 +30,19 @@
 // Local variables
 var video, backgroundVideo;
 
-var Shim = function(){
-	//
+var Shim = function( options ){
+	// variables
 	var self = this;
 	// fallbacks
 	w.document = w.document || {};
+	options = options || {};
+	// extend options
+	this.options = utils.extend({}, defaults, options);
 	//
-	utils.injectStyles('.video-background { position: absolute; /* bottom: 50%; right: 50%; -webkit-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%); */ min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1000; overflow: hidden; }');
+	utils.injectStyles('.video-background { position: '+ this.options.position +'; /* bottom: 50%; right: 50%; -webkit-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%); */ min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1000; overflow: hidden; }');
 
 	// find all the elements
-	this.parse();
+	if( this.options.autoparse ) this.parse();
 	//
 };
 
@@ -47,6 +50,8 @@ var Shim = function(){
 
 // default options (extend when you initialize)
 var defaults = {
+	autoparse: true,
+	position: "absolute", // options: absolute, fixed
 	attribute: "background",
 	dataClass: false
 };
@@ -118,7 +123,27 @@ var utils = {
 			style.appendChild(document.createTextNode(css));
 		}
 		head.appendChild(style);
+	},
+
+	// deep extend, multi-object
+	extend: function() {
+		var objects = Array.prototype.slice.call(arguments);
+		var destination = objects.shift();
+		//
+		for( var num in objects){
+			var source = objects[num];
+			for (var property in source) {
+				if (source[property] && source[property].constructor && source[property].constructor === Object) {
+					destination[property] = destination[property] || {};
+					arguments.callee(destination[property], source[property]);
+				} else {
+					destination[property] = source[property];
+				}
+			}
+		}
+		return destination;
 	}
+
 };
 
 
