@@ -1,6 +1,7 @@
 # CSS: background-video
 
-An HTML5 shim to support background videos as a CSS attrbute .
+An HTML5 shim to support background videos as a CSS attribute.
+
 
 ## Features
 
@@ -8,6 +9,34 @@ An HTML5 shim to support background videos as a CSS attrbute .
 * **Automated**: works with no additional logic on the client
 * **Independent**: no other dependencies required
 * **Standards-compliant**: following existing conventions of CSS/HTML5
+
+
+## Install
+
+Using npm:
+```
+$ npm install css-background-video
+```
+
+Using bower:
+```
+$ bower install css-background-video
+```
+
+
+## Usage
+
+Initialize the classes that's saved in the global namespace manually, usually after all the have markup has been rendered.
+```
+var Class = css['background-video'];
+new Class();
+```
+You can also let the plugin automatically execute ```onload``` by creating adding the following global var:
+```
+css = css || {};
+css['background-video'] = true;
+```
+Instead of a boolean you can define an object, which will be used as the initialization options.
 
 
 ## Credits
