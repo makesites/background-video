@@ -9,7 +9,8 @@ An HTML5 shim to support background videos as a CSS attribute.
 * **Automated**: works with no additional logic on the client
 * **Independent**: no other dependencies required
 * **Standards-compliant**: following existing conventions of CSS/HTML5
-* **Multi-format**: add multiple video URLs for cross-broser support
+* **Multi-format**: add multiple video URLs for cross-browser support
+
 
 ## Examples
 
@@ -32,7 +33,13 @@ $ bower install css-background-video
 
 ## Usage
 
-Initialize the classes that's saved in the global namespace manually, usually after all the have markup has been rendered.
+The shim works with the traditional css attribute ```background``` where you define the urls of the videos:
+```
+.selector {
+	background: url(/path/to/video-url.mp4), url(/path/to/video-url.webm), url(/path/to/video-url.ogv);
+}
+```
+To utilize those attributes, initialize the logic that's saved in the global namespace manually, usually after all the have markup has been rendered.
 ```
 var Shim = css['background-video'];
 new Shim();
