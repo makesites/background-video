@@ -41,7 +41,8 @@ var name = package.name;
 var src = [
 	// main lib
 	'lib/process.js',
-	'lib/update.js'
+	'lib/update.js',
+	'lib/utils.js'
 ];
 
 // - concatinate all files
