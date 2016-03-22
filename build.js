@@ -41,6 +41,7 @@ var name = package.name;
 var src = [
 	// main lib
 	'lib/options.js',
+	'lib/events.js',
 	'lib/parse.js',
 	'lib/render.js',
 	'lib/styles.js',
