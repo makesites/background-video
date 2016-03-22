@@ -2,7 +2,7 @@
  * @name css-background-video
  * @author makesites
  * Homepage: http://github.com/makesites/css-background-video
- * Version: 0.2.0 (Mon, 21 Mar 2016 23:53:21 GMT)
+ * Version: 0.2.0 (Tue, 22 Mar 2016 04:26:52 GMT)
  * @license Apache License, Version 2.0
  */
 
@@ -68,7 +68,7 @@ var parse = function(){
 		for(var r in rules){
 			// #21 - excluding :hover styles from parsing
 			if( !rules[r].cssText ) continue;
-			if( rules[r].cssText.search("background") == -1 ) continue;
+			if( rules[r].cssText.search( this.options.attribute ) == -1 ) continue;
 			if( rules[r].cssText.search(/mp4|webm|ogv/g) == -1 ) continue;
 			// get el
 			var selector = rules[r].selectorText;
@@ -95,6 +95,29 @@ var render = function(els, videos){
 	var parser = new DOMParser();
 	video = parser.parseFromString(video, "text/html");
 	video = video.getElementsByTagName('video')[0];
+	// events
+	video.addEventListener('error', function( e ){
+		//console.log("error",  e);
+		// reset
+		this.load();
+		//this.play();
+	}, false);
+	// remove any fallback background when playing
+	video.addEventListener('canplaythrough', function( e ){
+		this.parentNode.style.background = "none";
+	}, false);
+	// broadcast state to data attribute
+	video.addEventListener('play', function( e ){
+		this.setAttribute('data-state','play');
+	}, false);
+	video.addEventListener('pause', function( e ){
+		this.setAttribute('data-state','pause');
+	}, false);
+	video.addEventListener('ended', function( e ){
+		this.setAttribute('data-state','ended');
+	}, false);
+
+	// insert in the DOM
 	for(var e = 0; e < els.length; e++) {
 		var el = els[e];
 		if( el.children ){
