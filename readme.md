@@ -19,6 +19,7 @@ An HTML5 shim to support background videos as a CSS attribute.
 * [Fixed hero](http://rawgit.com/makesites/css-background-video/master/examples/fixed.html)
 * [Parallax hero](http://rawgit.com/makesites/css-background-video/master/examples/parallax.html)
 * [Fade-in effect](http://rawgit.com/makesites/css-background-video/master/examples/fade-in.html)
+* [Media Queries](http://rawgit.com/makesites/css-background-video/master/examples/media-queries.html)
 
 
 ## Install
