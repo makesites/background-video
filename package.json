@@ -6,6 +6,12 @@
 	"homepage": "http://github.com/makesites/css-background-video",
 	"repository": "http://github.com/makesites/css-background-video",
 	"license": "Apache-2.0",
+	"licenses": [
+		{
+			"type": "Apache License, Version 2.0",
+			"url": "http://www.makesites.org/licenses/APACHE-2.0"
+		}
+	],
 	"engine": {
 		"node": ">=0.8.x"
 	},
